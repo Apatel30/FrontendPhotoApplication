@@ -1,0 +1,17 @@
+<h1>Album-Details are here!</h1>
+
+
+<div class="row">
+    <div class="col-sm-3 pt-3" *ngFor="let photo of photos">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="photo.photoUrl" alt="Card image cap">
+            <div class="card-body">
+            <h6 class="card-title">{{photo.createdBy}}</h6>
+            <h6 class="card-title">{{photo.dateCreated}}</h6>
+            
+            <a [routerLink]="['/photo',photo.id]" class="btn btn-primary">Go to photo</a>
+            </div>
+        </div>
+    </div>
+</div>
+

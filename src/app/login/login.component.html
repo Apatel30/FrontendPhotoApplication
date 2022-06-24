@@ -1,0 +1,56 @@
+
+
+<div style="width:400px; margin:auto; padding-top: 200px;" *ngIf="signInFormVisible; else signUpForm">
+    <p>Welcom to SignIn page !</p>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+        <a class="nav-link active">SignIn</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" (click)="makeSignUpFormVisible()" >SignUp</a>
+        </li>
+    </ul>
+
+
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control"  [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="SignIn()">SignIn</button>
+    
+</div>
+<ng-template #signUpForm>
+    <div style="width:400px; margin:auto; padding-top: 200px;">
+        <p>Welcom to Signup page !</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link" (click)="makeSignInFormVisible()">SignIn</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active">SignUp</a>
+            </li>
+        </ul>
+
+
+            <div class="form-group">
+            <label for="inputname">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="name" aria-describedby="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="signUp()">SignUp</button>
+        
+    </div>
+</ng-template>
